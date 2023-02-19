@@ -1,3 +1,4 @@
+#python3
 #221RDC035, Artemijs Zaharovs, 18.gr.
 from collections import namedtuple
 
