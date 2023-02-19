@@ -1,4 +1,4 @@
-//221RDC035, Artemijs Zaharovs, 18.gr.
+#221RDC035, Artemijs Zaharovs, 18.gr.
 
 from collections import namedtuple
 
@@ -6,8 +6,6 @@ Bracket = namedtuple("Bracket", ["char", "position"])
 
 
 def are_matching(left, right):
-    #print(type(left))
-    #print(type(right))
     
     return (left + right) in ["()", "[]", "{}"]
 
@@ -24,16 +22,14 @@ def find_mismatch(text):
             
 
         if next in ")]}":
-            #print(len(opening_brackets_stack))
-            #print(opening_brackets_stack, next)
-            #print(are_matching(str(opening_brackets_stack), next))
+           
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[len(opening_brackets_stack)-1][0], next):
                 #print(i+1)
                 return i + 1 
                 
             if are_matching(opening_brackets_stack[len(opening_brackets_stack)-1][0], next):
                 opening_brackets_stack.pop()
-            # Process closing bracket, write your code here
+           
             pass
     
     if opening_brackets_stack :
@@ -49,7 +45,7 @@ def main():
             text = f.read()
 
     mismatch = find_mismatch(text)
-    # Printing answer, write your code here
+   
     if not mismatch :
         print("Success")
     else:
@@ -57,3 +53,4 @@ def main():
 
 
 if __name__ == "__main__":
+    main()
